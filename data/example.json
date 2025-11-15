@@ -1,0 +1,56 @@
+{
+  "product_name": "Supernova x Kiip Wireless TH60 Headphone Bluetooth Wireless Headset Earphone BT5.3 Macaroon",
+  "brand": "KiipWireless",
+  "category": ["Handphone & Aksesoris", "Audio Handphone", "Headset"],
+  "rating": 4.9,
+  "review_count": 5578,
+  "sold_count": "10RB+",
+  "favourite_count": 15700,
+  "store": {
+    "name": "Supernova 1D Official Store",
+    "is_official": true,
+    "is_star_seller": true,
+    "rating": 4.9,
+    "total_products": 171,
+    "chat_response_rate": "100%",
+    "joined_years_ago": 8,
+    "location": "Kab. Bogor"
+  },
+  "variants": [
+    {
+      "name": "Biru",
+      "price_original": 199000,
+      "price_discounted": 179000,
+      "discount_percent": 10,
+      "stock": 120,
+      "sku_id": "VAR-BLU",
+      "voucher_available": true
+    },
+    {
+      "name": "Hijau",
+      "price_original": 199000,
+      "price_discounted": 169000,
+      "discount_percent": 15,
+      "stock": 80,
+      "sku_id": "VAR-GRN",
+      "voucher_available": true
+    },
+    {
+      "name": "Pink",
+      "price_original": 199000,
+      "price_discounted": 159000,
+      "discount_percent": 20,
+      "stock": 60,
+      "sku_id": "VAR-PNK",
+      "voucher_available": false
+    }
+  ],
+  "specifications": {
+    "connection_type": "Wireless",
+    "warranty_period": "12 Bulan",
+    "origin": "Kab. Bogor"
+  },
+  "description": "Headphone nirkabel dengan fitur dual-device connection...",
+  "product_link": "https://shopee.co.id/Supernova-Kiip-Wireless-TH60...",
+  "scraped_date": "2025-11-13"
+}
