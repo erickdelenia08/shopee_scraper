@@ -2,13 +2,13 @@ import extractShopeeIDs from "../utils/extract_url.mjs";
 import waitForShopeeCaptcha from "../waitCaptcha.mjs";
 
 async function delay(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function getProductDetail(page, link) {
+async function getProductDetail(page, link, browser) {
   // ==== OPEN PRODUCT PAGE ====
   await page.goto(link, { waitUntil: "networkidle2" });
-  await waitForShopeeCaptcha(page);
+  await waitForShopeeCaptcha(page, browser);
 
   // ==== WAIT PRODUCT TITLE ====
   await page.waitForSelector("h1", { timeout: 20000 }).catch(() => {});
@@ -22,7 +22,7 @@ async function getProductDetail(page, link) {
     { timeout: 20000 }
   );
 
-  const {shop_id, item_id}=extractShopeeIDs(page.url())
+  const { shop_id, item_id } = extractShopeeIDs(page.url());
 
   const shop = await page.evaluate((shop_id) => {
     const shop = document.querySelector("#sll2-pdp-product-shop");
@@ -85,7 +85,7 @@ async function getProductDetail(page, link) {
       shop_type,
       location: getLocation(),
     };
-  },shop_id);
+  }, shop_id);
 
   const specifications = await page.evaluate(() => {
     const specSection = document.querySelector("section.I_DV_3 .Gf4Ro0");
@@ -94,16 +94,21 @@ async function getProductDetail(page, link) {
     const specs = {};
 
     specSection.querySelectorAll(".ybxj32").forEach((el) => {
-      const key = el.querySelector("h3.VJOnTD")?.innerText?.trim();
+      const keyEl = el.children[0]; // h3
+      const valEl = el.children[1]; // div atau <a>
+
+      if (!keyEl || !valEl) return;
+
+      const key = keyEl.innerText.trim();
       if (!key) return;
 
-      // Untuk kategori (ada beberapa <a>) atau value tunggal
-      const links = el.querySelectorAll("a.EtYbJs");
+      // Jika value punya banyak <a> → array (kategori)
+      const links = valEl.querySelectorAll("a");
       if (links.length > 0) {
         specs[key] = Array.from(links).map((a) => a.innerText.trim());
       } else {
-        const value = el.querySelector("div")?.innerText?.trim() || null;
-        specs[key] = value;
+        // Selain kategori → single text / single <a> (brand, stock, warranty, dll.)
+        specs[key] = valEl.innerText.trim();
       }
     });
 
@@ -130,6 +135,13 @@ async function getProductDetail(page, link) {
       return lokasi;
     };
 
+    const fav = document.querySelector(
+      "div.flex.items-center.feDSnr > button > div"
+    );
+
+    let match;
+    if (fav) match = fav.innerText.match(/\(([^)]+)\)/);
+
     const category = Array.from(
       document.querySelectorAll("div.flex.items-center.idLK2l a")
     ).map((el) => el.innerText.trim());
@@ -137,48 +149,43 @@ async function getProductDetail(page, link) {
     return {
       title: getText("h1"),
       price: getText(".ZA5sW5"),
-      sold: getText("button:nth-child(1) .F9RHbS"),
-      discountPrice: getText(".IZPeQz.B67UQ0"),
+      sold_count: getText("div.flex.asFzUa > div > div.aleSBU > span"),
+      discount_price: getText(".IZPeQz.B67UQ0"),
       rating: getText("button:nth-child(1) .jMXp4d"),
+      favourite_count: match ? match[1].trim() : null,
+      shop_name: getText("#sll2-pdp-product-shop .fV3TIn"),
+      shope_location: getLocation(),
 
-      shopName: getText("#sll2-pdp-product-shop .fV3TIn"),
-      shopeLocation: getLocation(),
-
-      reviewCount: getText("button:nth-child(2) .F9RHbS"),
+      review_count: getText("button:nth-child(2) .F9RHbS"),
 
       category,
-      description: document.querySelector("div.product-detail.page-product__detail > section:nth-child(2) > div > div")?.innerText,
+      description: document.querySelector(
+        "div.product-detail.page-product__detail > section:nth-child(2) > div > div"
+      )?.innerText,
     };
   });
 
-  // Ambil semua tombol varian
   const variantButtons = await page.$$("button.sApkZm");
-
   let variants = [];
 
-  for (let i = 0; i < variantButtons.length; i++) {
-    // Klik varian ke-i
-    await variantButtons[i].click();
-
-    // Tunggu UI update stok
-    await page.waitForSelector(
-      "section.flex.items-center.OaFP0p div:last-child",
-      {
-        visible: true,
-      }
+  for (const btn of variantButtons) {
+    const isDisabled = await btn.evaluate(
+      (b) => b.getAttribute("aria-disabled") === "true"
+    );
+    const variantName = await btn.evaluate(
+      (b) => b.querySelector("span")?.innerText || null
     );
 
-    await delay(1100);
+    if (!isDisabled) {
+      await btn.click();
+      await page.waitForSelector(
+        "section.flex.items-center.OaFP0p div:last-child",
+        { visible: true }
+      );
+      await delay(1200); // pastikan UI update
 
-    // Ambil nama varian (innerText dari span)
-    const variantName = await page.evaluate((el) => {
-      return el.querySelector("span")?.innerText || null;
-    }, variantButtons[i]);
-
-    // Ambil price & stock
-    const { normalPrice, discountPrice, stockText } = await page.evaluate(
-      () => {
-        return {
+      const { normalPrice, discountPrice, stockText } = await page.evaluate(
+        () => ({
           normalPrice:
             document.querySelector(".ZA5sW5")?.innerText.trim() || null,
           discountPrice:
@@ -187,27 +194,27 @@ async function getProductDetail(page, link) {
             document.querySelector(
               "section.flex.items-center.OaFP0p div:last-child"
             )?.innerText || null,
-        };
-      }
-    );
+        })
+      );
 
-    let stock = stockText ? parseInt(stockText.replace(/\D/g, ""), 10) : null;
-
-    variants.push({
-      variant: variantName,
-      stock: stock,
-      normalPrice,
-      discountPrice,
-    });
+      variants.push({
+        variant: variantName,
+        stock: stockText ? parseInt(stockText.replace(/\D/g, ""), 10) : null,
+        price: normalPrice,
+        discount_price: discountPrice,
+      });
+    } else {
+      // varian habis
+      variants.push({
+        variant: variantName,
+        stock: 0,
+        price: null,
+        discount_price: null,
+      });
+    }
   }
 
-  return {item_id,
-    ...product,
-    url: link,
-    variants,
-    shop,
-    specifications,
-  };
+  return { item_id, ...product, url: link, variants, shop, specifications };
 }
 
 export default getProductDetail;

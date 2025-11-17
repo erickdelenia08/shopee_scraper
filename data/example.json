@@ -1,56 +1,218 @@
-{
-  "product_name": "Supernova x Kiip Wireless TH60 Headphone Bluetooth Wireless Headset Earphone BT5.3 Macaroon",
-  "brand": "KiipWireless",
-  "category": ["Handphone & Aksesoris", "Audio Handphone", "Headset"],
-  "rating": 4.9,
-  "review_count": 5578,
-  "sold_count": "10RB+",
-  "favourite_count": 15700,
-  "store": {
-    "name": "Supernova 1D Official Store",
-    "is_official": true,
-    "is_star_seller": true,
-    "rating": 4.9,
-    "total_products": 171,
-    "chat_response_rate": "100%",
-    "joined_years_ago": 8,
-    "location": "Kab. Bogor"
-  },
-  "variants": [
-    {
-      "name": "Biru",
-      "price_original": 199000,
-      "price_discounted": 179000,
-      "discount_percent": 10,
-      "stock": 120,
-      "sku_id": "VAR-BLU",
-      "voucher_available": true
+[
+  {
+    "item_id": "43263677288",
+    "title": "NANVAN NVN-HF23 Headset Earphone Gaming Type-C / Jack 3.5mm Dengan Microphone Bisa Lepas Premium",
+    "price": "Rp100.000",
+    "sold_count": "375",
+    "discount_price": "Rp75.000 - Rp85.000",
+    "rating": "4.9",
+    "favourite_count": "379",
+    "shop_name": "Nanvan Official Store",
+    "shope_location": "KOTA JAKARTA BARAT",
+    "review_count": "147",
+    "category": [
+      "Shopee",
+      "Computer & Accessories",
+      "Gaming",
+      "Gaming Headset",
+      "Shopee",
+      "Computer & Accessories",
+      "Gaming",
+      "Gaming Headset"
+    ],
+    "description": "Barang ready stock ya kak :)\n\n\n\n\n\n\n\n\n\n\n\n\n\nTersedia varian : \n\n\n\n\n- Jack 3.5mm ( varian biasanya untuk laptop/android lama/pc / iPhone lama )\n\n\n\n\n- Type-C ( android baru / iPhone )\n\n\n\n\n\n\n\n\n\n\n\n\n\n- Note : variasi type c = 99% working di semua device type - c smartphone..apabila tidak support / mendukung . Uang akan kami kembalikan.\n\n\n\n\n\n\n\n\n\n\n\n\n\nIsi dalam paket :\n\n\n\n\n- Headset Premium Gaming NVN-HF23\n\n\n\n\n- 1x Mic Lepas Pasang\n\n\n\n\n- 1x Clip On\n\n\n\n\n- 1 Pasang Earbud Cadangan Sedang \n\n\n\n\n- 1 Pasang Earbud Cadangan Kecil\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpeksifikasi : \n\n\n\n\n- Brand : NANVAN\n\n\n\n\n- Model : NVN-HF23\n\n\n\n\n- Headset in ear gaming microphone\n\n\n\n\n- Hi-Res Audio\n\n\n\n\n- Microphone utama bisa di lepas pasang\n\n\n\n\n- Noise reduction\n\n\n\n\n- Suara jernih saat telepon,meeting,atau live streaming\n\n\n\n\n- Desain ergonomis dan ringan\n\n\n\n\n- Nyaman di pakai lama tanpa sakit\n\n\n\n\n- Stabil dan tidak mudah jatuh\n\n\n\n\n- Cocok untuk gamer,customer service,webinar,zoom,dan daily call\n\n\n\n\n- Ada volume control\n\n\n\n\n- Ada answer / reject call button\n\n\n\n\n- Warna hitam\n\n\n\n\n- Premium quality\n\n\n\n\n- Package : box\n\n\n\n\n\n\n\n\n\n\n\n\n\nTerima kasih sudah berbelanja di toko kami .\n\n\n\n\nKami sangat berterima kasih apabila mendapat respon ulasan bintang 5 nya ya kak.\n\n\n\n\nDitunggu pesanannya ya kak.",
+    "url": "https://shopee.co.id/NANVAN-NVN-HF23-Headset-Earphone-Gaming-Type-C-Jack-3.5mm-Dengan-Microphone-Bisa-Lepas-Premium-i.4400239.43263677288?extraParams=%7B%22display_model_id%22%3A238014271111%2C%22model_selection_logic%22%3A3%7D&sp_atk=1881f1f9-d88b-4023-9af8-d7ab18478644&xptdk=1881f1f9-d88b-4023-9af8-d7ab18478644",
+    "variants": [
+      {
+        "variant": "JACK",
+        "stock": 105,
+        "price": "Rp100.000",
+        "discount_price": "Rp75.000"
+      },
+      {
+        "variant": "TYPE C",
+        "stock": 50,
+        "price": "Rp100.000",
+        "discount_price": "Rp85.000"
+      }
+    ],
+    "shop": {
+      "shop_id": "4400239",
+      "name": "Nanvan Official Store",
+      "rating": "94,5k",
+      "total_products": "153",
+      "chat_response_rate": "-",
+      "joined_years_ago": "10 years ago",
+      "followers": "4,7k",
+      "shop_type": "Shopee Mall",
+      "location": "KOTA JAKARTA BARAT"
     },
-    {
-      "name": "Hijau",
-      "price_original": 199000,
-      "price_discounted": 169000,
-      "discount_percent": 15,
-      "stock": 80,
-      "sku_id": "VAR-GRN",
-      "voucher_available": true
-    },
-    {
-      "name": "Pink",
-      "price_original": 199000,
-      "price_discounted": 159000,
-      "discount_percent": 20,
-      "stock": 60,
-      "sku_id": "VAR-PNK",
-      "voucher_available": false
+    "specifications": {
+      "Category": [
+        "Shopee",
+        "Computer & Accessories",
+        "Gaming",
+        "Gaming Headset"
+      ],
+      "Stock": "IN STOCK",
+      "Brand": "Nanvan",
+      "Connection Type": "Wired",
+      "Earphone, Headphone, & Headset Type": "Others",
+      "Gaming Focused": "Yes",
+      "Audio Compatibility": "Mobile",
+      "Warranty Duration": "1 Month",
+      "Condition": "New",
+      "Custom Product": "No",
+      "Warranty Type": "Seller Warranty",
+      "Certificate No. (POSTEL)": "-",
+      "Ships From": "KOTA JAKARTA BARAT"
     }
-  ],
-  "specifications": {
-    "connection_type": "Wireless",
-    "warranty_period": "12 Bulan",
-    "origin": "Kab. Bogor"
   },
-  "description": "Headphone nirkabel dengan fitur dual-device connection...",
-  "product_link": "https://shopee.co.id/Supernova-Kiip-Wireless-TH60...",
-  "scraped_date": "2025-11-13"
-}
+  {
+    "item_id": "44023163753",
+    "title": "[BISA COD] ACOME 3D Subwoofer Headphone Earphone Headseat Powerfull Bass Transparent Black Wire Body ACE01 Garansi Resmi 1 Tahun (1)",
+    "price": "Rp120.000",
+    "sold_count": "1RB+",
+    "discount_price": "Rp24.900",
+    "rating": "4.9",
+    "favourite_count": "218",
+    "shop_name": "Acome Official Shop",
+    "shope_location": "Unknown",
+    "review_count": "504",
+    "category": [
+      "Shopee",
+      "Computer & Accessories",
+      "Gaming",
+      "Gaming Headset",
+      "Shopee",
+      "Computer & Accessories",
+      "Gaming",
+      "Gaming Headset"
+    ],
+    "description": "DISARANKAN MENAMBAHKAN BUBBLE WRAP UNTUK MELINDUNGI PRODUK INI. SILAHKAN CEK ETALASE TOKO KAMI UNTUK PEMBELIAN !!\n\n\n\n\n ACOME  3D Subwoofer Headphones Powerfull Bass  Transparent Black Wire Body Garansi Resmi 1 Tahun ACE01 \n\n\n\n\n\n\n\n\n\n\n Powerful Bass\n\n\n\n\n·      Composite diphragm speaker 14.2mm TPU + PEEK, powerfull bass, suara jernih dan stabil dengan tiga frekuensi\n\n\n\n\n \n\n\n\n\n Superior Fit & Comfort\n\n\n\n\n·      Desain over-the-ear yang nyaman dipakai dengan sudut 60°, membuatnya nyaman dipakai jangka lama\n\n\n\n\n \n\n\n\n\n Multi-Function Button Control & Microphone\n\n\n\n\n·      Mengatur volume suara lebih mudah dengan tombol kontrol pada kabel, dilengkapi dengan mikrofon internal\n\n\n\n\n \n\n\n\n\n Transparent Black Wire Body\n\n\n\n\n·      Anti kusut dan tahan tarikan\n\n\n\n\n·      Ujung kabel berlapis emas 3.5mm        \n\n\n\n\n·      Bahan TPE berelastisitas tinggi\n\n\n\n\n\n\n\nKEUNGGULAN ACE01 PRO:\n\n\n\n\n Bass Kuat dan Dalam\n\n\n\n\nSpeaker berukuran besar 14.2mm dengan diafragma titanium dan cincin tembaga, suara tiga frekuensi seimbang dan bass kuat\n\n\n\n\n Desain Ear-hook, Tidak Mudah Lepas Saat Olahraga\n\n\n\n\nDesain ear-hook yang nyaman dan ergonomis, tetap kokoh dan nyaman saat digunakan\n\n\n\n\n Kompatibel Penuh dengan Port Type-C\n\n\n\n\nChip digital dengan tingkat decoding tinggi, mendukung seri iPhone 15 dan 99% perangkat dengan port Type-C\n\n\n\n\n Tombol Kontrol Multifungsi\n\n\n\n\nAtur volume dengan mudah dan kontrol musik serta panggilan dengan satu sentuhan\n\n\n\n\n Mikrofon Bawaan, Panggilan Jernih\n\n\n\n\nMikrofon yang sensitif dengan pengambilan suara omnidirectional, panggilan jernih tanpa gangguan\n\n\n\n\n Kabel Transparan dengan Pola Spiral\n\n\n\n\nKabel TPE berlapis alumunium foil yang lentur dan anti-kusut, tahan tarik dan gangguan\n\n\n\n\n\n\n\n\n\n\nSpesifikasi:\n\n\n\n\n*Plug: Type-C\n\n\n\n\n*Speaker Bass Komposit\n\n\n\n\n*Pemakaian Ear-hook\n\n\n\n\n* Kabel Alumunium Foil Transparan\n\n\n\n\n\n\n\n Ketentuan Garansi ⏰\n\n\n\n\n      1. Garansi 1 Tahun Tukar Baru Untuk Produk Tidak Berlaku Jika:\n\n\n\n\n           A. Tidak Ditemukan Adanya Kerusakan\n\n\n\n\n           B. Kerusakan Disebabkan Oleh Faktor Luar/Di Luar Kuasa\n\n\n\n\n           C. Kerusakan Akibat Dari Kesalahan Pemakaian (Terjatuh, Tergores, Ternoda, Pecah, Terkena Air, Dll.)\n\n\n\n\n      2. Syarat Klaim:\n\n\n\n\n           A. Unit Masih Dalam Masa Garansi Dan Sesuai Dengan Kebijakan Garansi Yang Telah Ditetapkan\n\n\n\n\n           B. Kelengkapan Dari Unit Harus Disertai Secara Lengkap (Dus, Kabel Charger, Buku Manual, Kartu Garansi, Dll)\n\n\n\n\n           C. Dilengkapi Dengan Nota Pembelian (Print Out History Pembelian) Dan Informasi Kerusakan Unit\n\n\n\n\n⭐ Note: Hubungi Customer Service\n\n ",
+    "url": "https://shopee.co.id/-BISA-COD-ACOME-3D-Subwoofer-Headphone-Earphone-Headseat-Powerfull-Bass-Transparent-Black-Wire-Body-ACE01-Garansi-Resmi-1-Tahun-(1)-i.161425378.44023163753?extraParams=%7B%22display_model_id%22%3A243999404620%2C%22model_selection_logic%22%3A2%7D&sp_atk=b804d4c3-43b9-4e4d-9558-965104191ccc&xptdk=b804d4c3-43b9-4e4d-9558-965104191ccc",
+    "variants": [
+      {
+        "variant": "ACE01 - Jack 3.5mm",
+        "stock": 5320,
+        "price": "Rp120.000",
+        "discount_price": "Rp24.900"
+      },
+      {
+        "variant": "ACE01 Pro - TYPE C",
+        "stock": 3434,
+        "price": "Rp150.000",
+        "discount_price": "Rp32.900"
+      }
+    ],
+    "shop": {
+      "shop_id": "161425378",
+      "name": "Acome Official Shop",
+      "rating": "913,2k",
+      "total_products": "195",
+      "chat_response_rate": "100%",
+      "joined_years_ago": "6 years ago",
+      "followers": "903,8k",
+      "shop_type": "Shopee Mall",
+      "location": "Unknown"
+    },
+    "specifications": {
+      "Category": [
+        "Shopee",
+        "Computer & Accessories",
+        "Gaming",
+        "Gaming Headset"
+      ],
+      "Discount stock": "IN STOCK",
+      "Other Stock": "IN STOCK",
+      "Brand": "Acome",
+      "Connection Type": "Wired",
+      "Gaming Focused": "Yes",
+      "Audio Compatibility": "Camera, Mobile, Others, PC & Laptop",
+      "Warranty Duration": "12 Months",
+      "Warranty Type": "Supplier Warranty",
+      "Build-in Battery": "No",
+      "Condition": "New",
+      "Custom Product": "No",
+      "Mystery Box": "Yes",
+      "Input Voltage": "220V",
+      "Certificate No. (POSTEL)": "-"
+    }
+  },
+  {
+    "item_id": "27974737606",
+    "title": "JETEX HX8 Headset Gaming Mic Earphone Gaming - Garansi 2 Tahun",
+    "price": "Rp399.000",
+    "sold_count": "197",
+    "discount_price": "Rp62.900",
+    "rating": "5.0",
+    "favourite_count": "66",
+    "shop_name": "JETE Authorized Store Yogyakarta",
+    "shope_location": "Unknown",
+    "review_count": "92",
+    "category": [
+      "Shopee",
+      "Mobile & Accessories",
+      "Mobile Audio",
+      "Earphones, Headphones & Headsets",
+      "Shopee",
+      "Mobile & Accessories",
+      "Mobile Audio",
+      "Earphones, Headphones & Headsets"
+    ],
+    "description": "HF Jete HX8 Gaming\n\nHeadset Gaming kabel yang minimalis namun kualitas audio gaming tetap mantul, mic yang bisa dilepas sesukamu menjadi daya tarik tersendiri \n\nSPEIFIKASI :\n\n- Model&nbsp; : HX8\n\n- Sensitivity : 99±5dB\n\n- Design For : Gaming\n\n- Driver Unit : 10mm / 15mm Speaker\n\n- Microphone : Detachable Microphone\n\n- Noise Cancelling : Yes\n\n- Cable Length : 1.2m\n\n- Plug Type : 3.5mm Audio Jack\n\n- Color : Black, Blue, Red\n\n\n\n\n   \n\n\n\n\nHeadset gaming selalu identik dengan headphone besar dan membutuhkan space yang besar juga. Oleh karena itu, JETE Indonesia merilis headset gaming minimalis yang mudah dibawa kemanapun. JETEX HX8 hadir memenuhi kebutuhan gamers enthusiast untuk mabar dimanapun kapanpun. Design yang mini tidak mengurangi kualitas audio gaming yang dahsyat dan tidak delay.\n\n\n\n\nMeskipun memiliki desain simpel dan kecil, JETEX HX8 menggunakan drivers 10mm yang mampu menghasilkan suara menggelegar, tanpa mengurangi sensasi bermain game, rasakan game seperti anda berada dalam peperangan yang sebenarnya.\n\n\n\n\nAlasan Kenapa Harus Beli di JETE Authorized Store Yogyakarta :\n\n1. Harga Inc PPN 11% (bisa menerbitkan faktur pajak)\n\n2. Produk 100% Original, Uang kembali 100% jika brg tidak ORI\n\n3. Selalu Ready Stock dan Siap Kirim\n\n4. Packing Aman dan Rapi\n\n5. Pengiriman Tepat Waktu\n\n6. Pelayanan Ramah dengan Product Knowledge yang Baik\n\n7. Proses Klaim Garansi Mudah & dibantu Hingga Selesai\n\n8. Banyak Bonus dan Voucher Cashback yang didapatkan\n\n9. Memiliki Cabang Toko Resmi Offline yang tersebar di seluruh Indonesia",
+    "url": "https://shopee.co.id/JETEX-HX8-Headset-Gaming-Mic-Earphone-Gaming-Garansi-2-Tahun-i.1391884684.27974737606?extraParams=%7B%22display_model_id%22%3A237327102511%2C%22model_selection_logic%22%3A3%7D&sp_atk=ee53e928-9453-4f62-a769-5b3a8f7b5550&xptdk=ee53e928-9453-4f62-a769-5b3a8f7b5550",
+    "variants": [
+      {
+        "variant": "BLACK",
+        "stock": 2144,
+        "price": "Rp399.000",
+        "discount_price": "Rp62.900"
+      },
+      {
+        "variant": "BLUE",
+        "stock": 1578,
+        "price": "Rp399.000",
+        "discount_price": "Rp62.900"
+      },
+      {
+        "variant": "RED",
+        "stock": 1472,
+        "price": "Rp399.000",
+        "discount_price": "Rp62.900"
+      }
+    ],
+    "shop": {
+      "shop_id": "1391884684",
+      "name": "JETE Authorized Store Yogyakarta",
+      "rating": "3,2k",
+      "total_products": "536",
+      "chat_response_rate": "100%",
+      "joined_years_ago": "13 months ago",
+      "followers": "10,8k",
+      "shop_type": "Shopee Mall",
+      "location": "Unknown"
+    },
+    "specifications": {
+      "Category": [
+        "Shopee",
+        "Mobile & Accessories",
+        "Mobile Audio",
+        "Earphones, Headphones & Headsets"
+      ],
+      "Discount stock": "25",
+      "Other Stock": "IN STOCK",
+      "Brand": "JETE",
+      "Connection Type": "Wired",
+      "Gaming Focused": "No",
+      "Audio Compatibility": "Camera, Mobile, Motor, Others, PC & Laptop",
+      "Sports Focused": "Yes",
+      "Warranty Duration": "24 Months",
+      "Warranty Type": "Manufacturer Warranty",
+      "Condition": "New",
+      "Custom Product": "No",
+      "Input Voltage": "220V",
+      "Certificate No. (POSTEL)": "-"
+    }
+  }
+]
