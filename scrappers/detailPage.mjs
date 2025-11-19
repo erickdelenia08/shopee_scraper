@@ -1,6 +1,13 @@
 import extractShopeeIDs from "../utils/extract_url.mjs";
 import waitForShopeeCaptcha from "../waitCaptcha.mjs";
 
+function joinVariant(v1, v2) {
+  if (!v1 && !v2) return null;
+  if (v1 && !v2) return v1;
+  if (!v1 && v2) return v2;
+  return `${v1} / ${v2}`;
+}
+
 async function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -165,24 +172,69 @@ async function getProductDetail(page, link, browser) {
     };
   });
 
-  const variantButtons = await page.$$("button.sApkZm");
+  const variantSections = await page.$$(
+    "section.flex.items-center:not(.OaFP0p)" // skip 'Kuantitas'
+  );
+
+  let variantGroups = [];
+
+  for (const section of variantSections) {
+    const title = await section.$eval("h2", (h) =>
+      h.innerText.trim().toUpperCase()
+    );
+    if (title === "KUANTITAS") continue;
+
+    const buttons = await section.$$("button.sApkZm");
+    if (buttons.length > 0) variantGroups.push(buttons);
+  }
+
   let variants = [];
 
-  for (const btn of variantButtons) {
-    const isDisabled = await btn.evaluate(
-      (b) => b.getAttribute("aria-disabled") === "true"
-    );
-    const variantName = await btn.evaluate(
-      (b) => b.querySelector("span")?.innerText || null
+  // ==== CASE 0 LEVEL ====
+  if (variantGroups.length === 0) {
+    const { normalPrice, discountPrice, stockText } = await page.evaluate(
+      () => ({
+        normalPrice:
+          document.querySelector(".ZA5sW5")?.innerText.trim() || null,
+        discountPrice:
+          document.querySelector(".IZPeQz.B67UQ0")?.innerText.trim() || null,
+        stockText:
+          document.querySelector(
+            "section.flex.items-center.OaFP0p div:last-child"
+          )?.innerText || null,
+      })
     );
 
-    if (!isDisabled) {
-      await btn.click();
-      await page.waitForSelector(
-        "section.flex.items-center.OaFP0p div:last-child",
-        { visible: true }
+    variants.push({
+      variant: null,
+      stock: stockText ? parseInt(stockText.replace(/\D/g, "")) : null,
+      price: normalPrice,
+      discount_price: discountPrice,
+    });
+  }
+
+  // ==== CASE 1 LEVEL ====
+  else if (variantGroups.length === 1) {
+    const group = variantGroups[0];
+
+    for (const btn of group) {
+      const isDisabled = await btn.evaluate(
+        (b) => b.getAttribute("aria-disabled") === "true"
       );
-      await delay(1200); // pastikan UI update
+      const name = await btn.evaluate((b) => b.getAttribute("aria-label"));
+
+      if (isDisabled) {
+        variants.push({
+          variant: name,
+          stock: 0,
+          price: null,
+          discount_price: null,
+        });
+        continue;
+      }
+
+      await btn.click();
+      await delay(1100);
 
       const { normalPrice, discountPrice, stockText } = await page.evaluate(
         () => ({
@@ -198,19 +250,82 @@ async function getProductDetail(page, link, browser) {
       );
 
       variants.push({
-        variant: variantName,
-        stock: stockText ? parseInt(stockText.replace(/\D/g, ""), 10) : null,
+        variant: name,
+        stock: stockText ? parseInt(stockText.replace(/\D/g, "")) : null,
         price: normalPrice,
         discount_price: discountPrice,
       });
-    } else {
-      // varian habis
-      variants.push({
-        variant: variantName,
-        stock: 0,
-        price: null,
-        discount_price: null,
-      });
+    }
+  }
+
+  // ==== CASE 2 LEVEL ====
+  else if (variantGroups.length === 2) {
+    const [group1, group2] = variantGroups;
+
+    for (const btn1 of group1) {
+      const isDisabled1 = await btn1.evaluate(
+        (b) => b.getAttribute("aria-disabled") === "true"
+      );
+      const name1 = await btn1.evaluate((b) => b.getAttribute("aria-label"));
+
+      if (isDisabled1) {
+        for (const btn2 of group2) {
+          const name2 = await btn2.evaluate((b) =>
+            b.getAttribute("aria-label")
+          );
+          variants.push({
+            variant: joinVariant(name1, name2),
+            stock: 0,
+            price: null,
+            discount_price: null,
+          });
+        }
+        continue;
+      }
+
+      await btn1.click();
+      await delay(300);
+
+      for (const btn2 of group2) {
+        const isDisabled2 = await btn2.evaluate(
+          (b) => b.getAttribute("aria-disabled") === "true"
+        );
+        const name2 = await btn2.evaluate((b) => b.getAttribute("aria-label"));
+
+        if (isDisabled2) {
+          variants.push({
+            variant: joinVariant(name1, name2),
+            stock: 0,
+            price: null,
+            discount_price: null,
+          });
+          continue;
+        }
+
+        await btn2.click();
+        await delay(1200);
+
+        const { normalPrice, discountPrice, stockText } = await page.evaluate(
+          () => ({
+            normalPrice:
+              document.querySelector(".ZA5sW5")?.innerText.trim() || null,
+            discountPrice:
+              document.querySelector(".IZPeQz.B67UQ0")?.innerText.trim() ||
+              null,
+            stockText:
+              document.querySelector(
+                "section.flex.items-center.OaFP0p div:last-child"
+              )?.innerText || null,
+          })
+        );
+
+        variants.push({
+         variant: joinVariant(name1, name2),
+          stock: stockText ? parseInt(stockText.replace(/\D/g, "")) : null,
+          price: normalPrice,
+          discount_price: discountPrice,
+        });
+      }
     }
   }
 

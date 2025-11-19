@@ -1,0 +1,1 @@
+['merek', 'tipe koneksi', 'tipe earphone, headphone & headset', 'kesesuaian audio', 'masa garansi', 'jenis garansi', 'build-in battery', 'kapasitas baterai', 'impedansi', 'peringkat sensitivitas', 'minimum frekuensi', 'maksimum frekuensi', 'bahan', 'fitur earphones, headphones & headsets', 'tipe steker']

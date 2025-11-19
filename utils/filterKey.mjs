@@ -7,6 +7,7 @@ export function isMatch(obj) {
     "in-ear",
     "pods",
     "ear",
+    "buds",
   ];
   let grade = 0;
 
