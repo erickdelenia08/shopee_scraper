@@ -3,8 +3,8 @@ function extractShopeeIDs(url) {
   if (!match) return null;
 
   return {
-    shop_id: match[1],
-    item_id: match[2]
+    shopid: match[1],
+    itemid: match[2]
   };
 }
 
